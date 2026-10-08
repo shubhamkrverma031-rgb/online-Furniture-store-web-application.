@@ -27,7 +27,7 @@ function App() { // Main component draws the furniture store.
     <> {/* Group the page without adding another visible box. */}
       <div className="announcement">Free shipping over Rs. 4,999 · 30-day easy returns</div> {/* Store offer. */}
       <header className="header"> {/* Website header. */}
-        <a className="brand" href="#"><img className="brand-logo" src="assets/cosynest-mark.png" alt="CosyNest" /></a> {/* Show logo in header. */}
+        <a className="brand" href="#">CosyNest</a> {/* Show the store name in the header. */}
         <nav><a href="#store">Shop</a> <a href="#rooms">Rooms</a></nav> {/* Jump to page sections. */}
       </header> {/* End header. */}
       <section className="hero"><div className="hero-copy"><p className="eyebrow">TIMELESS DESIGN. MODERN LIVING.</p><h1>Furniture that feels like home.</h1><p>Thoughtfully made pieces for every room.</p><a className="button dark" href="#store">Shop the collection</a></div></section> {/* Welcome banner. */}

@@ -9,7 +9,6 @@ button { cursor: pointer; } /* Show that buttons can be clicked. */
 .announcement, footer { padding: 12px 6%; background: #1d2a22; color: white; text-align: center; } /* Style the top notice and bottom footer. */
 .header { padding: 18px 6%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e8e5de; } /* Arrange the logo, menu, and buttons. */
 .brand { font: 22px Georgia, serif; letter-spacing: 2px; } /* Style the store name. */
-.brand-logo { display: block; width: 76px; height: 76px; object-fit: contain; mix-blend-mode: multiply; } /* Fit the supplied mark into the header. */
 nav, .filters { display: flex; flex-wrap: wrap; gap: 16px; } /* Place navigation and category buttons in rows. */
 .search input { width: 100%; margin: 8px 0; padding: 12px; border: 1px solid #e8e5de; } /* Style the product search field. */
 .eyebrow { color: #85734f; font-size: 10px; font-weight: bold; letter-spacing: 2px; } /* Mark section labels. */
