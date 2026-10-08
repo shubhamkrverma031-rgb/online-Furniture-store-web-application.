@@ -1,107 +1,59 @@
-<!DOCTYPE html>                                    <!-- Tells the browser this is an HTML5 page -->
-<html lang="en">                                   <!-- Starts the page; English language -->
-<head>                                             <!-- HEAD: settings of the page (not visible) -->
-  <meta charset="UTF-8">                           <!-- Shows all letters and symbols correctly -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Fits mobile screens -->
-  <title>CosyNest Furniture</title>                <!-- Text on the browser tab -->
-  <link rel="stylesheet" href="style.css">         <!-- CONNECTS the CSS file: style.css -->
-</head>                                            <!-- Ends the HEAD -->
-<body>                                             <!-- BODY: everything the visitor sees -->
-
-  <header>                                         <!-- Top bar with logo, menu and wallet -->
-    <h2 class="logo">CosyNest</h2>                 <!-- Shop name -->
-    <nav>                                          <!-- Menu: each button opens one "page" -->
-      <button class="nav-btn" data-page="home">Home</button>   <!-- data-page tells JS which page to open -->
-      <button class="nav-btn" data-page="store">Store</button> <!-- Opens the Store page -->
-      <button class="nav-btn" data-page="cart">Cart (<span id="cartCount">0</span>)</button> <!-- Opens Cart; shows item count -->
-      <button class="nav-btn" data-page="wallet">Wallet</button> <!-- Opens the Wallet page -->
-    </nav>                                         <!-- Ends the menu -->
-    <p class="balance-top">Rs. <span id="walletTop">0</span></p> <!-- Small wallet balance in header -->
-  </header>                                        <!-- Ends the top bar -->
-
-  <main>                                           <!-- Main content: holds all 4 pages -->
-
-    <!-- ============ PAGE 1: HOME ============ -->
-    <section id="home" class="page">               <!-- Home page; class="page" lets JS show/hide it -->
-      <h1>Welcome to CosyNest</h1>                 <!-- Biggest heading -->
-      <p>                                          <!-- Paragraph: description of the website -->
-        At CosyNest, we believe your home should be a personal sanctuary built
-        for comfort, style, and modern living. We curate high-quality,
-        sustainably crafted furniture that blends contemporary design with
-        everyday functionality. From ergonomic seating to timeless dining sets,
-        CosyNest makes transforming your space simple with transparent details,
-        minimalist aesthetics, and effortless online ordering.
-      </p>                                         <!-- Ends the paragraph -->
-      <button class="nav-btn" data-page="store">Shop Now</button> <!-- Button that opens the Store page -->
-    </section>                                     <!-- Ends the Home page -->
-
-    <!-- ============ PAGE 2: STORE ============ -->
-    <section id="store" class="page">              <!-- Store page -->
-      <h1>Our Furniture Store</h1>                 <!-- Page heading -->
-      <div class="product-list">                   <!-- Holds all product cards -->
-
-        <div class="card" data-name="Comfy Sofa" data-price="25000"> <!-- Product 1; data-* stores info for JS -->
-          <img src="images/sofa.jpg" alt="Blue sofa"> <!-- Product picture -->
-          <h3>Comfy Sofa</h3>                      <!-- Product name -->
-          <p class="price">Rs. 25,000</p>          <!-- Price -->
-          <p class="info">3-seater, soft cushions, blue fabric.</p> <!-- Details -->
-          <button class="buy-btn">Buy Now</button> <!-- Buy straight away -->
-          <button class="add-btn">Add to Cart</button> <!-- Save for later in cart -->
-        </div>                                     <!-- Ends product 1 -->
-
-        <div class="card" data-name="Wooden Bed" data-price="32000"> <!-- Product 2 -->
-          <img src="images/bed.jpg" alt="Wooden bed"> <!-- Picture -->
-          <h3>Wooden Bed</h3>                      <!-- Name -->
-          <p class="price">Rs. 32,000</p>          <!-- Price -->
-          <p class="info">King size, strong teak wood.</p> <!-- Details -->
-          <button class="buy-btn">Buy Now</button> <!-- Buy straight away -->
-          <button class="add-btn">Add to Cart</button> <!-- Add to cart -->
-        </div>                                     <!-- Ends product 2 -->
-
-        <div class="card" data-name="Dining Table" data-price="12000"> <!-- Product 3 -->
-          <img src="images/table.jpg" alt="Dining table"> <!-- Picture -->
-          <h3>Dining Table</h3>                    <!-- Name -->
-          <p class="price">Rs. 12,000</p>          <!-- Price -->
-          <p class="info">Seats 4 people, smooth wooden top.</p> <!-- Details -->
-          <button class="buy-btn">Buy Now</button> <!-- Buy straight away -->
-          <button class="add-btn">Add to Cart</button> <!-- Add to cart -->
-        </div>                                     <!-- Ends product 3 -->
-
-      </div>                                       <!-- Ends product list -->
-    </section>                                     <!-- Ends the Store page -->
-
-    <!-- ============ PAGE 3: CART ============ -->
-    <section id="cart" class="page">               <!-- Cart page -->
-      <h1>My Cart</h1>                             <!-- Page heading -->
-      <ul id="cartList"></ul>                      <!-- Empty list; JS adds cart items here -->
-      <p>Total: Rs. <strong id="cartTotal">0</strong></p> <!-- Total price; JS fills it -->
-      <form id="orderForm">                        <!-- Order form -->
-        <input type="text" id="custName" placeholder="Full name" required> <!-- Name box -->
-        <textarea id="address" placeholder="Delivery address" required></textarea> <!-- Address box -->
-        <select id="payment">                      <!-- Dropdown for payment type -->
-          <option value="wallet">Pay with Wallet</option> <!-- Use wallet money -->
-          <option value="cod">Cash on Delivery</option>   <!-- Pay on arrival -->
-        </select>                                  <!-- Ends dropdown -->
-        <button type="submit">Place Order</button> <!-- Sends the order -->
-      </form>                                      <!-- Ends form -->
-      <p id="orderMessage"></p>                    <!-- JS shows order success or errors -->
-    </section>                                     <!-- Ends the Cart page -->
-
-    <!-- ============ PAGE 4: WALLET ============ -->
-    <section id="wallet" class="page">             <!-- Wallet page -->
-      <h1>My Wallet</h1>                           <!-- Page heading -->
-      <p>Balance: Rs. <strong id="walletBalance">0</strong></p> <!-- Balance; JS updates it -->
-      <input type="number" id="addAmount" min="1" placeholder="Enter amount"> <!-- Amount to add -->
-      <button id="addMoneyBtn">Add to Wallet</button> <!-- Adds the money -->
-      <p id="walletMessage"></p>                   <!-- JS shows "Money added!" here -->
-    </section>                                     <!-- Ends the Wallet page -->
-
-  </main>                                          <!-- Ends main content -->
-
-  <footer>                                         <!-- Bottom bar -->
-    <p>CosyNest Furniture | Student Project</p>    <!-- Footer text -->
-  </footer>                                        <!-- Ends bottom bar -->
-
-  <script src="script.js"></script>                <!-- CONNECTS the JavaScript file: script.js -->
-</body>                                            <!-- Ends the BODY -->
-</html>                                            <!-- Ends the page -->
+<!doctype html> <!-- Tell the browser to use modern HTML. -->
+<html lang="en"> <!-- Set English as the page language. -->
+<head> <!-- Start page settings and linked files. -->
+  <meta charset="UTF-8"> <!-- Allow standard letters and symbols. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Fit the page to phones and desktops. -->
+  <meta name="theme-color" content="#17231d"> <!-- Set the browser toolbar color on supported devices. -->
+  <title>CosyNest | Furniture for living</title> <!-- Set the browser-tab title. -->
+  <link rel="preconnect" href="https://images.unsplash.com"> <!-- Speed up connections to the photo host. -->
+  <!-- Connect this HTML page to its styles in style.css. -->
+  <link rel="stylesheet" href="style.css"> <!-- Load the website design rules. -->
+</head> <!-- End page settings. -->
+<body> <!-- Start all visible website content. -->
+  <div class="announcement">Free shipping on orders over Rs. 9,999 <span>·</span> 30-day easy returns</div> <!-- Show the shipping and returns notice. -->
+  <header class="header"> <!-- Create the top navigation bar. -->
+    <a class="brand" href="#home"><span class="brand-icon">C</span><span>CosyNest<small>FURNITURE FOR LIVING</small></span></a> <!-- Link the logo back to the top of the page. -->
+    <!-- Each # link jumps to the section with the matching id. -->
+    <nav aria-label="Main navigation"><a href="#store">Shop</a><a href="#rooms">Collections</a><a href="#inspiration">About us</a></nav> <!-- Link the menu to store, rooms, and inspiration sections. -->
+    <!-- cartToggle opens the bag; cartCount is updated by script.js. -->
+    <button class="cart-toggle" id="cartToggle" aria-label="Open shopping bag">Bag <span id="cartCount">0</span></button> <!-- Provide the bag button and item counter. -->
+  </header> <!-- End navigation bar. -->
+  <main id="home"> <!-- Mark the main content and the home link destination. -->
+    <!-- The hero class connects this section to the large image design in style.css. -->
+    <section class="hero"> <!-- Start the hero image and introduction. -->
+      <div class="hero-copy"><p class="eyebrow">TIMELESS DESIGN. MODERN LIVING.</p><h1>Furniture that<br>feels like home.</h1> <!-- Show the small label and main headline. -->
+        <p>Thoughtfully made pieces for the moments that make a house yours.</p> <!-- Describe the furniture collection. -->
+        <a class="button dark" href="#store">Shop the collection</a><a class="button light" href="#rooms">Explore rooms</a> <!-- Link the hero buttons to products and rooms. -->
+      </div> <!-- End hero text and buttons. -->
+    </section> <!-- End hero section. -->
+    <section class="benefits" aria-label="Our service"> <!-- Start the shopping service highlights. -->
+      <div><span>↗</span><p><b>Free shipping</b><small>On orders over Rs. 9,999</small></p></div><div><span>◷</span><p><b>30-day returns</b><small>Hassle-free returns</small></p></div> <!-- Show shipping and returns details. -->
+      <div><span>◇</span><p><b>Secure payments</b><small>Protected checkout</small></p></div><div><span>♡</span><p><b>Here to help</b><small>Expert support, always</small></p></div> <!-- Show payment and support details. -->
+    </section> <!-- End service highlights. -->
+    <section class="section" id="rooms"><div class="section-heading"><div><p class="eyebrow">SHOP BY CATEGORY</p><h2>Find furniture for every room</h2></div><a href="#store">View all categories ↗</a></div> <!-- Start room categories and link their section id to navigation. -->
+      <div class="categories"> <!-- Group the room photo cards. -->
+        <a class="category" href="#store"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Warm, inviting living room"><b>Living room</b></a> <!-- Display the living-room category photo and label. -->
+        <a class="category" href="#store"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=600&q=80" alt="Natural wood dining room"><b>Dining room</b></a> <!-- Display the dining-room category photo and label. -->
+        <a class="category" href="#store"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80" alt="Calm modern bedroom"><b>Bedroom</b></a> <!-- Display the bedroom category photo and label. -->
+        <a class="category" href="#store"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600&q=80" alt="Bright home office"><b>Home office</b></a> <!-- Display the office category photo and label. -->
+        <a class="category" href="#store"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Green garden outside a modern home"><b>Outdoor</b></a> <!-- Display the outdoor category photo and label. -->
+      </div> <!-- End room category cards. -->
+    </section> <!-- End room category section. -->
+    <!-- Product classes and data fields connect product cards to script.js. -->
+    <section class="section products" id="store"><div class="section-heading"><div><p class="eyebrow">MADE TO BE LOVED</p><h2>Customer favorites</h2></div><span>Thoughtful pieces, lasting comfort</span></div> <!-- Start products and provide the store navigation target. -->
+      <div class="product-grid"> <!-- Group the product cards into a responsive grid. -->
+        <article class="product" data-name="Luna 3-Seater Sofa" data-price="25000"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" alt="Soft neutral three-seater sofa"><p class="rating">★★★★★ <small>(128)</small></p><h3>Luna 3-Seater Sofa</h3><b>Rs. 25,000</b><button class="add-button">Add to bag +</button></article> <!-- Show sofa details; data-name and data-price are read by script.js. -->
+        <article class="product" data-name="Oakwood Dining Table" data-price="18000"><img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80" alt="Oak dining table with chairs"><p class="rating">★★★★★ <small>(96)</small></p><h3>Oakwood Dining Table</h3><b>Rs. 18,000</b><button class="add-button">Add to bag +</button></article> <!-- Show dining table details for the cart script. -->
+        <article class="product" data-name="Milo Accent Chair" data-price="9500"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80" alt="Sculptural upholstered accent chair"><p class="rating">★★★★☆ <small>(72)</small></p><h3>Milo Accent Chair</h3><b>Rs. 9,500</b><button class="add-button">Add to bag +</button></article> <!-- Show chair details for the cart script. -->
+        <article class="product" data-name="Raven Wood Sideboard" data-price="22000"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Minimal wood sideboard in a bright room"><p class="rating">★★★★☆ <small>(64)</small></p><h3>Raven Wood Sideboard</h3><b>Rs. 22,000</b><button class="add-button">Add to bag +</button></article> <!-- Show sideboard details for the cart script. -->
+      </div> <!-- End product cards. -->
+    </section> <!-- End product section. -->
+    <section class="inspiration" id="inspiration"><div><p class="eyebrow">DESIGNED TO INSPIRE</p><h2>Modern furniture.<br>Made for real life.</h2><p>Discover pieces that bring comfort, function and timeless style to your home.</p><a class="button dark" href="#store">Explore our favorites</a></div></section> <!-- Show the closing inspiration message and link. -->
+  </main> <!-- End the main page content. -->
+  <!-- These IDs connect the bag display and buttons to script.js. -->
+  <aside class="cart-panel" id="cartPanel" hidden aria-label="Shopping bag"><div class="cart-heading"><h2>Your bag</h2><button id="closeCart" aria-label="Close shopping bag">×</button></div><ul id="cartItems"></ul><p class="subtotal">Subtotal <b id="cartTotal">Rs. 0</b></p><button class="button dark checkout" id="checkout">Continue to checkout</button><p class="cart-note" id="cartMessage" aria-live="polite"></p></aside> <!-- Provide IDs for bag rows, total, feedback, and click actions. -->
+  <footer>CosyNest <span>Thoughtfully made for home.</span></footer> <!-- Show the brand and tagline at the bottom. -->
+  <!-- Load script.js last so the HTML elements exist before JavaScript selects them. -->
+  <script src="script.js"></script> <!-- Connect the shopping bag behavior to this page. -->
+</body> <!-- End visible page content. -->
+</html> <!-- End the HTML document. -->
