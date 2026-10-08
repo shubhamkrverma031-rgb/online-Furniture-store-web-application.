@@ -1,0 +1,107 @@
+<!DOCTYPE html>                                    <!-- Tells the browser this is an HTML5 page -->
+<html lang="en">                                   <!-- Starts the page; English language -->
+<head>                                             <!-- HEAD: settings of the page (not visible) -->
+  <meta charset="UTF-8">                           <!-- Shows all letters and symbols correctly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Fits mobile screens -->
+  <title>CosyNest Furniture</title>                <!-- Text on the browser tab -->
+  <link rel="stylesheet" href="style.css">         <!-- CONNECTS the CSS file: style.css -->
+</head>                                            <!-- Ends the HEAD -->
+<body>                                             <!-- BODY: everything the visitor sees -->
+
+  <header>                                         <!-- Top bar with logo, menu and wallet -->
+    <h2 class="logo">CosyNest</h2>                 <!-- Shop name -->
+    <nav>                                          <!-- Menu: each button opens one "page" -->
+      <button class="nav-btn" data-page="home">Home</button>   <!-- data-page tells JS which page to open -->
+      <button class="nav-btn" data-page="store">Store</button> <!-- Opens the Store page -->
+      <button class="nav-btn" data-page="cart">Cart (<span id="cartCount">0</span>)</button> <!-- Opens Cart; shows item count -->
+      <button class="nav-btn" data-page="wallet">Wallet</button> <!-- Opens the Wallet page -->
+    </nav>                                         <!-- Ends the menu -->
+    <p class="balance-top">Rs. <span id="walletTop">0</span></p> <!-- Small wallet balance in header -->
+  </header>                                        <!-- Ends the top bar -->
+
+  <main>                                           <!-- Main content: holds all 4 pages -->
+
+    <!-- ============ PAGE 1: HOME ============ -->
+    <section id="home" class="page">               <!-- Home page; class="page" lets JS show/hide it -->
+      <h1>Welcome to CosyNest</h1>                 <!-- Biggest heading -->
+      <p>                                          <!-- Paragraph: description of the website -->
+        At CosyNest, we believe your home should be a personal sanctuary built
+        for comfort, style, and modern living. We curate high-quality,
+        sustainably crafted furniture that blends contemporary design with
+        everyday functionality. From ergonomic seating to timeless dining sets,
+        CosyNest makes transforming your space simple with transparent details,
+        minimalist aesthetics, and effortless online ordering.
+      </p>                                         <!-- Ends the paragraph -->
+      <button class="nav-btn" data-page="store">Shop Now</button> <!-- Button that opens the Store page -->
+    </section>                                     <!-- Ends the Home page -->
+
+    <!-- ============ PAGE 2: STORE ============ -->
+    <section id="store" class="page">              <!-- Store page -->
+      <h1>Our Furniture Store</h1>                 <!-- Page heading -->
+      <div class="product-list">                   <!-- Holds all product cards -->
+
+        <div class="card" data-name="Comfy Sofa" data-price="25000"> <!-- Product 1; data-* stores info for JS -->
+          <img src="images/sofa.jpg" alt="Blue sofa"> <!-- Product picture -->
+          <h3>Comfy Sofa</h3>                      <!-- Product name -->
+          <p class="price">Rs. 25,000</p>          <!-- Price -->
+          <p class="info">3-seater, soft cushions, blue fabric.</p> <!-- Details -->
+          <button class="buy-btn">Buy Now</button> <!-- Buy straight away -->
+          <button class="add-btn">Add to Cart</button> <!-- Save for later in cart -->
+        </div>                                     <!-- Ends product 1 -->
+
+        <div class="card" data-name="Wooden Bed" data-price="32000"> <!-- Product 2 -->
+          <img src="images/bed.jpg" alt="Wooden bed"> <!-- Picture -->
+          <h3>Wooden Bed</h3>                      <!-- Name -->
+          <p class="price">Rs. 32,000</p>          <!-- Price -->
+          <p class="info">King size, strong teak wood.</p> <!-- Details -->
+          <button class="buy-btn">Buy Now</button> <!-- Buy straight away -->
+          <button class="add-btn">Add to Cart</button> <!-- Add to cart -->
+        </div>                                     <!-- Ends product 2 -->
+
+        <div class="card" data-name="Dining Table" data-price="12000"> <!-- Product 3 -->
+          <img src="images/table.jpg" alt="Dining table"> <!-- Picture -->
+          <h3>Dining Table</h3>                    <!-- Name -->
+          <p class="price">Rs. 12,000</p>          <!-- Price -->
+          <p class="info">Seats 4 people, smooth wooden top.</p> <!-- Details -->
+          <button class="buy-btn">Buy Now</button> <!-- Buy straight away -->
+          <button class="add-btn">Add to Cart</button> <!-- Add to cart -->
+        </div>                                     <!-- Ends product 3 -->
+
+      </div>                                       <!-- Ends product list -->
+    </section>                                     <!-- Ends the Store page -->
+
+    <!-- ============ PAGE 3: CART ============ -->
+    <section id="cart" class="page">               <!-- Cart page -->
+      <h1>My Cart</h1>                             <!-- Page heading -->
+      <ul id="cartList"></ul>                      <!-- Empty list; JS adds cart items here -->
+      <p>Total: Rs. <strong id="cartTotal">0</strong></p> <!-- Total price; JS fills it -->
+      <form id="orderForm">                        <!-- Order form -->
+        <input type="text" id="custName" placeholder="Full name" required> <!-- Name box -->
+        <textarea id="address" placeholder="Delivery address" required></textarea> <!-- Address box -->
+        <select id="payment">                      <!-- Dropdown for payment type -->
+          <option value="wallet">Pay with Wallet</option> <!-- Use wallet money -->
+          <option value="cod">Cash on Delivery</option>   <!-- Pay on arrival -->
+        </select>                                  <!-- Ends dropdown -->
+        <button type="submit">Place Order</button> <!-- Sends the order -->
+      </form>                                      <!-- Ends form -->
+      <p id="orderMessage"></p>                    <!-- JS shows order success or errors -->
+    </section>                                     <!-- Ends the Cart page -->
+
+    <!-- ============ PAGE 4: WALLET ============ -->
+    <section id="wallet" class="page">             <!-- Wallet page -->
+      <h1>My Wallet</h1>                           <!-- Page heading -->
+      <p>Balance: Rs. <strong id="walletBalance">0</strong></p> <!-- Balance; JS updates it -->
+      <input type="number" id="addAmount" min="1" placeholder="Enter amount"> <!-- Amount to add -->
+      <button id="addMoneyBtn">Add to Wallet</button> <!-- Adds the money -->
+      <p id="walletMessage"></p>                   <!-- JS shows "Money added!" here -->
+    </section>                                     <!-- Ends the Wallet page -->
+
+  </main>                                          <!-- Ends main content -->
+
+  <footer>                                         <!-- Bottom bar -->
+    <p>CosyNest Furniture | Student Project</p>    <!-- Footer text -->
+  </footer>                                        <!-- Ends bottom bar -->
+
+  <script src="script.js"></script>                <!-- CONNECTS the JavaScript file: script.js -->
+</body>                                            <!-- Ends the BODY -->
+</html>                                            <!-- Ends the page -->
