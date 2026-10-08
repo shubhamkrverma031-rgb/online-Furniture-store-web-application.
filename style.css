@@ -1,95 +1,57 @@
-/* Set the basic page font, colors and spacing. */
+/* Basic page style. */
 * { box-sizing: border-box; } /* Keep padding inside element widths. */
-html { scroll-behavior: smooth; } /* Scroll smoothly to linked sections. */
-body { margin: 0; background: white; color: #202720; font: 14px/1.5 Arial, sans-serif; } /* Set the page's base style. */
-a { color: inherit; text-decoration: none; } /* Match links to the surrounding text. */
-button { font: inherit; cursor: pointer; } /* Match button text and show it can be clicked. */
-/* Style the top notice, logo, menu and bag button. */
-.announcement { padding: 8px; background: #1d2a22; color: white; text-align: center; font-size: 11px; } /* Show the shipping message in a dark bar. */
-.header { height: 76px; padding: 0 6%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e8e5de; } /* Place the logo, menu and bag across the header. */
-.brand { display: flex; align-items: center; gap: 10px; font: 22px Georgia, serif; letter-spacing: 2px; } /* Arrange and style the brand name. */
-.brand-icon { width: 36px; height: 36px; border: 1px solid #a99d88; border-radius: 50%; text-align: center; line-height: 34px; } /* Draw the round letter logo. */
-.brand small { display: block; color: #77766f; font: 8px Arial, sans-serif; } /* Show a small caption below the logo. */
-nav { display: flex; gap: 34px; font-size: 12px; } /* Arrange the navigation links in a row. */
-nav a:hover, .section-heading a:hover { color: #88734f; } /* Change link color when hovered. */
-.cart-toggle { border: 0; background: white; color: #202720; } /* Keep the bag control simple. */
-.cart-toggle span { padding: 5px 8px; border-radius: 50%; background: #1d2a22; color: white; } /* Show the number of items in a round badge. */
-/* Set up the large photo and text at the top of the page. */
-.hero { min-height: 460px; padding: 5% 8%; display: flex; align-items: center; background: linear-gradient(90deg, #f7f5f0 0%, #f7f5f088 45%, transparent 75%), url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85") center/cover; } /* Put the room photo behind readable text. */
-.hero-copy { max-width: 500px; } /* Keep the introduction at a readable width. */
-.eyebrow { color: #85734f; font-size: 9px; font-weight: bold; letter-spacing: 2px; } /* Style the small section labels. */
-h1, h2 { font-family: Georgia, serif; font-weight: normal; } /* Use a classic font for main headings. */
-h1 { margin-bottom: 15px; font-size: clamp(38px, 5vw, 62px); line-height: 1.05; } /* Make the main title fit different screens. */
-.hero-copy p:not(.eyebrow) { max-width: 360px; color: #55564f; } /* Set the description width and color. */
-.button { display: inline-block; padding: 12px 18px; border: 1px solid #1d2a22; font-size: 10px; font-weight: bold; } /* Give links a button shape. */
-.dark { background: #1d2a22; color: white; } /* Style the main button dark. */
-.light { margin-left: 8px; background: white; } /* Separate the lighter second button. */
-/* Arrange the four service promises under the hero. */
-.benefits { padding: 22px 8%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; background: #f7f5f0; } /* Make a four-column service row. */
-.benefits div { display: flex; align-items: center; gap: 12px; } /* Place each icon beside its message. */
-.benefits span { font-size: 22px; } /* Make the service icons larger. */
-.benefits p { margin: 0; font-size: 10px; } /* Set a compact size for service text. */
-.benefits small { display: block; color: #77766f; } /* Put each service detail on a muted line. */
-/* Add spacing and headings to the room and product sections. */
-.section { padding: 54px 6% 10px; scroll-margin-top: 18px; } /* Space sections and anchor destinations. */
-.section-heading { margin-bottom: 18px; display: flex; align-items: end; justify-content: space-between; } /* Put section title and extra link on one line. */
-.section-heading h2 { margin: 0; font-size: 27px; } /* Set section title size. */
-.section-heading a, .section-heading span { color: #77766f; font-size: 10px; } /* Make extra section text subtle. */
-/* Display the room photographs in a row. */
-.categories { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; } /* Make five equal room columns. */
-.category { position: relative; height: 150px; overflow: hidden; background: #f7f5f0; } /* Set each room photo card size. */
-.category img { width: 100%; height: 100%; object-fit: cover; } /* Fill each room card with its photo. */
-.category b { position: absolute; bottom: 13px; left: 13px; color: white; font: 16px Georgia, serif; text-shadow: 1px 1px 4px #333; } /* Place the room name over its photo. */
-/* Display product photos, names, ratings, prices and buttons. */
-.products { padding-top: 50px; padding-bottom: 55px; } /* Add space around the product section. */
-.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; } /* Arrange four products in a row. */
-.product { overflow: hidden; border: 1px solid #e8e5de; padding-bottom: 13px; } /* Draw a simple border around each product. */
-.product img { width: 100%; height: 190px; object-fit: cover; } /* Give each product photo the same size. */
-.product h3, .product b, .rating { display: block; margin: 5px 13px; } /* Align product details inside each card. */
-.product h3 { font: 15px Georgia, serif; } /* Style product names. */
-.product b { font-size: 11px; } /* Set a smaller price size. */
-.rating { color: #9a7842; font-size: 11px; } /* Color the product rating gold. */
-.rating small { color: #77766f; } /* Make the review count less prominent. */
-.add-button { margin: 10px 13px 0; padding: 8px 10px; border: 1px solid #e8e5de; background: white; color: #1d2a22; } /* Style the Add to Bag button. */
-/* Create the photo banner near the bottom of the page. */
-.inspiration { min-height: 250px; margin: 0 6% 55px; padding: 35px 6%; background: linear-gradient(90deg, #f1eee8 0%, #f1eee8ee 40%, transparent 100%), url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80") center/cover; } /* Place the closing message over a room photo. */
-.inspiration h2 { font-size: 30px; } /* Set the banner heading size. */
-.inspiration p:not(.eyebrow) { max-width: 320px; color: #64645d; font-size: 12px; } /* Keep banner description short and readable. */
-/* Style the slide-in shopping bag; its IDs are used by script.js. */
-.cart-panel { position: fixed; z-index: 5; top: 0; right: 0; width: min(390px, 100%); height: 100vh; overflow: auto; padding: 25px; background: white; box-shadow: -8px 0 30px #0002; } /* Fix the bag to the right edge of the screen. */
-.cart-panel[hidden] { display: none; } /* Hide the bag until its button is clicked. */
-.cart-heading, .subtotal { display: flex; justify-content: space-between; align-items: center; } /* Align the title and subtotal. */
-.cart-heading h2 { margin: 0; } /* Remove extra space around the bag title. */
-.cart-heading button, .cart-panel li button { border: 0; background: white; cursor: pointer; } /* Remove default button borders. */
-.cart-panel ul { padding: 15px 0; list-style: none; } /* Remove bullets from the item list. */
-.cart-panel li { padding: 12px 0; display: flex; justify-content: space-between; border-bottom: 1px solid #e8e5de; font-size: 12px; } /* Separate cart items from their remove buttons. */
-.cart-panel li button { color: #8a594d; font-size: 10px; } /* Style the remove controls. */
-.subtotal { padding: 12px 0; border-top: 1px solid #e8e5de; } /* Separate subtotal from the item list. */
-.checkout { width: 100%; text-align: center; } /* Make checkout fill the bag width. */
-.cart-note { color: #77766f; font-size: 12px; } /* Style empty-bag and checkout messages. */
-footer { padding: 20px 6%; display: flex; justify-content: space-between; background: #1d2a22; color: white; } /* Make a simple dark footer row. */
-footer span { color: #d3d0c7; font-size: 10px; } /* Make the footer tagline smaller. */
-/* Change the layout for screens narrower than 700 pixels. */
-@media (max-width: 700px) { /* Start tablet and phone layout changes. */
-  .header { height: 65px; padding: 0 4%; } /* Make the header shorter. */
-  nav { gap: 13px; } /* Bring menu links closer together. */
-  .hero { min-height: 400px; padding: 9% 6%; background-position: 60% center; } /* Adjust the hero for a narrow screen. */
-  .benefits { grid-template-columns: repeat(2, 1fr); padding: 18px 6%; } /* Show two service items per row. */
-  .section { padding: 40px 4% 5px; } /* Reduce section spacing. */
-  .categories { grid-template-columns: repeat(2, 1fr); } /* Show two room cards per row. */
-  .category:last-child { display: none; } /* Hide the final room card on small screens. */
-  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* Show two products per row. */
-  .product img { height: 150px; } /* Reduce product photo height. */
-  .section-heading h2 { font-size: 22px; } /* Reduce section heading size. */
-  .inspiration { margin: 35px 4%; background-position: 58% center; } /* Fit the bottom banner to the screen. */
-} /* End tablet and phone rules. */
-/* Make a few more adjustments on very narrow phone screens. */
-@media (max-width: 430px) { /* Start narrow phone rules. */
-  nav { gap: 9px; font-size: 10px; } /* Make menu links smaller and closer. */
-  .brand { font-size: 18px; } /* Reduce the logo text size. */
-  .brand-icon { width: 30px; height: 30px; line-height: 28px; } /* Reduce the logo icon size. */
-  .brand small { font-size: 7px; } /* Reduce the brand caption size. */
-  .section-heading a, .section-heading span { display: none; } /* Hide extra heading text to save room. */
-  .hero { min-height: 390px; background-position: 63% center; } /* Adjust hero height and photo position. */
-  .dark, .light { padding: 11px 12px; font-size: 9px; } /* Fit hero buttons on a narrow screen. */
-} /* End narrow phone rules. */
+body { margin: 0; color: #202720; font: 14px/1.5 Arial, sans-serif; } /* Set page font, text color, and spacing. */
+a { color: inherit; text-decoration: none; } /* Make links match nearby text. */
+button, input { font: inherit; } /* Use the same font for form controls. */
+button { cursor: pointer; } /* Show that buttons can be clicked. */
+
+/* Header and brand. */
+.announcement, footer { padding: 12px 6%; background: #1d2a22; color: white; text-align: center; } /* Style the top notice and bottom footer. */
+.header { padding: 18px 6%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e8e5de; } /* Arrange the logo, menu, and buttons. */
+.brand { font: 22px Georgia, serif; letter-spacing: 2px; } /* Style the store name. */
+.brand-logo { display: block; width: 76px; height: 76px; object-fit: contain; mix-blend-mode: multiply; } /* Fit the supplied mark into the header. */
+nav, .filters { display: flex; flex-wrap: wrap; gap: 16px; } /* Place navigation and category buttons in rows. */
+.search input { width: 100%; margin: 8px 0; padding: 12px; border: 1px solid #e8e5de; } /* Style the product search field. */
+.eyebrow { color: #85734f; font-size: 10px; font-weight: bold; letter-spacing: 2px; } /* Mark section labels. */
+
+/* Hero, services and store content. */
+.hero { min-height: 440px; padding: 8%; display: flex; align-items: center; background: linear-gradient(90deg, #f7f5f0 0%, #f7f5f088 45%, transparent 75%), url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85") center/cover; } /* Show the main room photo and welcome message. */
+.hero-copy { max-width: 500px; } /* Keep hero text easy to read. */
+h1, h2 { font-family: Georgia, serif; font-weight: normal; } /* Use classic fonts for headings. */
+h1 { font-size: clamp(38px, 5vw, 62px); line-height: 1.05; } /* Resize the main heading to fit screen width. */
+.button { display: inline-block; padding: 12px 18px; border: 1px solid #1d2a22; } /* Make links look like buttons. */
+.dark, .selected { background: #1d2a22; color: white; } /* Highlight main and selected buttons. */
+.benefits { padding: 20px 8%; display: flex; justify-content: space-between; gap: 12px; background: #f7f5f0; } /* Arrange store promises. */
+.section { padding: 50px 6%; } /* Add space around the furniture section. */
+.filters { margin: 18px 0; } /* Separate category filters from the title. */
+.filters button { padding: 8px 12px; border: 1px solid #e8e5de; background: white; } /* Style each category choice. */
+.filters .selected { background: #1d2a22; } /* Show the selected category. */
+.search { display: block; max-width: 360px; margin-bottom: 20px; } /* Set the search box width. */
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; } /* Arrange products in four columns. */
+.product { overflow: hidden; padding-bottom: 14px; border: 1px solid #e8e5de; } /* Frame every product card. */
+.product img { width: 100%; height: 190px; object-fit: cover; } /* Crop all product pictures evenly. */
+.product h3, .rating, .add-button { display: block; margin: 8px 12px; } /* Space product name, label and link. */
+.rating { color: #9a7842; } /* Color the product label. */
+.add-button { padding: 8px; } /* Size the Amazon link like a card button. */
+.inspiration { margin: 0 6% 50px; padding: 35px; background: #f1eee8; } /* Create the closing banner. */
+.feedback { max-width: 720px; margin: 0 auto 50px; padding: 0 6%; } /* Keep the feedback area centered. */
+.feedback form, .feedback label { display: grid; gap: 8px; } /* Stack the feedback fields. */
+.feedback form { gap: 16px; } /* Separate each field and the submit button. */
+.feedback input, .feedback textarea { width: 100%; padding: 12px; border: 1px solid #e8e5de; } /* Style the feedback fields. */
+.feedback textarea { min-height: 100px; resize: vertical; } /* Give written feedback space. */
+.feedback form button { justify-self: start; cursor: pointer; } /* Keep the submit button compact. */
+.feedback-list article { margin-top: 16px; padding: 12px; background: #f7f5f0; } /* Separate feedback entries. */
+.feedback-list p { margin: 6px 0 0; } /* Space feedback text below its author. */
+
+/* Footer. */
+footer { display: flex; justify-content: space-between; } /* Align footer text. */
+
+/* Stack cards and controls on smaller screens. */
+@media (max-width: 700px) { /* Use a compact tablet/phone layout. */
+  .header { padding: 14px 4%; } /* Reduce header space. */
+  .hero { min-height: 380px; padding: 8% 5%; } /* Reduce hero height. */
+  .benefits { flex-wrap: wrap; } /* Allow service details to wrap onto another row. */
+  .section { padding: 35px 4%; } /* Reduce section margins. */
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* Show two products on each row. */
+  .product img { height: 150px; } /* Reduce product picture height. */
+} /* End tablet/phone layout. */
